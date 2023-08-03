@@ -1,0 +1,232 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.admin-container {
+  background-color: #f3f6f9;
+  height: 100%;
+  display: flex;
+  position: relative;
+}
+
+.content-item {
+  font-size: 15px;
+  padding: 2px;
+}
+
+.dashboard-card {
+  height: 100px;
+  max-width: 400px;
+}
+
+.subheader {
+  font-size: 15px;
+  font-family: Poppins;
+  font-weight: bold;
+}
+
+.dashboard-container,
+.customer-container,
+.orders-container,
+.products-container {
+  margin: 15px;
+}
+
+.list-item-name {
+  font-size: 15px;
+  font-family: Poppins;
+  font-weight: bolder;
+}
+
+.orders-title {
+  font-size: 18px;
+  font-family: Poppins;
+}
+
+@media (min-width: 1281px) {
+  .right-container {
+    height: 95vh;
+    width: 85%;
+  }
+  .left-container {
+    height: 95vh;
+    width: 10%;
+    border-right: 1px solid rgb(224, 227, 231);
+    overflow-y: scroll;
+  }
+  .left-container > .content {
+    text-align: center;
+  }
+}
+
+.table-header {
+  font-size: 14px;
+  font-family: Poppins;
+  font-weight: bold;
+}
+
+.product-rating-label {
+  font-family: Poppins;
+}
+
+.dashboard-categories {
+  margin: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.product-categories {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.category-item {
+  cursor: pointer;
+}
+
+.product-rating-chip {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.order-card {
+  margin-bottom: 15px;
+}
+
+.order-data-grid,
+.product-data-grid {
+  background-color: #fff;
+}
+
+.order-status {
+  padding: 2px;
+}
+
+.order-completed {
+  background-color: rgb(90, 189, 32);
+  color: #fff;
+  font-size: 11px;
+  border-radius: 7px;
+  font-weight: bold;
+}
+.order-returned {
+  background-color: #cc5012;
+  color: #fff;
+  font-size: 11px;
+  border-radius: 7px;
+  font-weight: bold;
+}
+
+.order-pending {
+  background-color: orange;
+  color: #fff;
+  font-size: 11px;
+  border-radius: 7px;
+  font-weight: bold;
+}
+.order-chip {
+  font-family: Poppins;
+}
+
+/* LAPTOP HEIGHT */
+
+@media (max-width: 1280px) {
+  .right-container {
+    height: 92vh;
+    width: 79%;
+    overflow-y: scroll;
+  }
+  .left-container {
+    height: 100%;
+    width: 21%;
+    border-right: 1px solid rgb(224, 227, 231);
+    overflow-y: scroll;
+  }
+}
+
+@media (min-width: 200px) and (max-width: 1024px) {
+  .right-container {
+    height: 92vh;
+    width: 85%;
+  }
+  .left-container {
+    height: 95vh;
+    width: 15%;
+    border-right: 1px solid rgb(224, 227, 231);
+    overflow-y: scroll;
+  }
+}
