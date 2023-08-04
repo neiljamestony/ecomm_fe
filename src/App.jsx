@@ -24,12 +24,18 @@ import Returns from './components/admin/Returns';
 import Settings from './components/admin/Settings';
 import Index from './components/user/Index';
 import Navbar from './components/styled-components/Navbar';
+import Item from './components/user/Item/Item';
+import Login from './components/auth/Login';
+import Register from './components/auth/Register';
 
 function App() {
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route path='/' element={<Root />}>
+        <Route path='/login' element={<Login />} />
+        <Route path='/register' element={<Register />} />
         <Route index element={<Index />} />
+        <Route path={`/:category/:id`} element={<Item />} />
         <Route path='/admin' element={<AdminDashboard />}>
           <Route index path='dashboard' element={<Dashboard />} />
           <Route path='orders' element={<Orders />} />
@@ -46,11 +52,7 @@ function App() {
     )
   );
 
-  return (
-    <div>
-      <RouterProvider router={router} />
-    </div>
-  );
+  return <RouterProvider router={router} />;
 }
 
 const LeftContent = () => {
@@ -140,10 +142,10 @@ const AdminDashboard = () => {
 
 const Root = () => {
   return (
-    <>
+    <div className='root-container'>
       <Navbar />
       <Outlet />
-    </>
+    </div>
   );
 };
 

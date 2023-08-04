@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import {
   Card,
   CardContent,
@@ -6,11 +7,24 @@ import {
   Stack,
   Rating,
 } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 
-export default function ProductItem({ image, title, price, rating }) {
+export default function ProductItem({
+  image,
+  title,
+  price,
+  rating,
+  category,
+  id,
+}) {
+  const navigate = useNavigate();
   return (
-    <Card variant='outlined' sx={{ height: 300 }}>
-      <CardMedia component='img' height='120' image={image} alt={title} />
+    <Card
+      variant='outlined'
+      sx={{ height: 300, cursor: 'pointer' }}
+      onClick={() => navigate(`/${category}/${id}`)}
+    >
+      <CardMedia component='img' height='170' image={image} alt={title} />
       <CardContent>
         <Stack spacing={2}>
           <Box fontSize={13}>{title}</Box>

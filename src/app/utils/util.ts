@@ -16,3 +16,13 @@ export const getCategoryProducts = ({ queryKey }) => {
     });
   return data;
 };
+
+export const getProductById = ({ queryKey }) => {
+  const [_, productId] = queryKey;
+  const data = fetch(`https://fakestoreapi.com/products/${productId}`)
+    .then((res) => res.json())
+    .then((json) => {
+      return json;
+    });
+  return data;
+};

@@ -24,8 +24,9 @@ export default function Navbar() {
   const navigate = useNavigate();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
-
-  console.log(location.pathname.includes('admin'));
+  const isAuthRoute =
+    location.pathname.includes('login') ||
+    location.pathname.includes('register');
 
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
@@ -124,28 +125,27 @@ export default function Navbar() {
             noWrap
             component='div'
             sx={{ display: { xs: 'none', sm: 'block' }, cursor: 'pointer' }}
-            onClick={() =>
-              location.pathname.includes('admin')
-                ? navigate('/')
-                : navigate('/admin/dashboard')
-            }
+            onClick={() => navigate('/')}
           >
             {location.pathname.includes('admin') ? 'ADMIN PANEL' : 'E-COMM'}
           </Typography>
           <Box sx={{ flexGrow: 1 }} />
-          <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-            <IconButton
-              size='large'
-              edge='end'
-              aria-label='account of current user'
-              aria-controls={menuId}
-              aria-haspopup='true'
-              onClick={handleProfileMenuOpen}
-              color='inherit'
-            >
-              <AccountCircle />
-            </IconButton>
-          </Box>
+          {!isAuthRoute && (
+            <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
+              <IconButton
+                size='large'
+                edge='end'
+                aria-label='account of current user'
+                aria-controls={menuId}
+                aria-haspopup='true'
+                onClick={handleProfileMenuOpen}
+                color='inherit'
+              >
+                <AccountCircle />
+              </IconButton>
+            </Box>
+          )}
+
           <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
             <IconButton
               size='large'
